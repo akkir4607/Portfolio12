@@ -5,7 +5,7 @@ import Work from './pages/Work';
 import Work2 from './pages/Work2';
 import About from './pages/About';
 import Sara from './pages/Sara';
-import Phish from './pages/Phish';
+import Phish from './pages/phish';
 import Mgshare from './pages/mgshare';
 import Airguard from './pages/Airguard';
 import Contact from './pages/Contact';
