@@ -1,0 +1,654 @@
+/* About.css */
+.about-section {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.about-container {
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+}
+
+.about-header {
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.kpr-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.about-title {
+  font-size: clamp(32px, 5vw, 72px);
+  font-weight: 900;
+  color: #000;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 1000px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.6s forwards;
+}
+
+.compass-icon {
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  animation: fadeInRotate 1s ease-out 0.9s forwards;
+}
+
+.compass-star {
+  font-size: 32px;
+  color: #333;
+  display: block;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.compass-icon:hover .compass-star {
+  transform: rotate(45deg);
+}
+
+.image-grid {
+  display: flex;
+  gap: 0;
+  position: relative;
+  height: 500px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 1.2s forwards;
+}
+
+.image-grid.visible .image-container {
+  transform: scale(1);
+}
+
+.image-container {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 0;
+  transform: scale(0.3);
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center center;
+}
+
+.left-image {
+  transition-delay: 0.2s;
+}
+
+.right-image {
+  transition-delay: 0.4s;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.image-container:hover .about-image {
+  filter: brightness(1) contrast(1.2);
+}
+
+.center-cross {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 2s forwards;
+}
+
+.cross-vertical,
+.cross-horizontal {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cross-vertical {
+  width: 4px;
+  height: 60px;
+  top: -30px;
+  left: -2px;
+}
+
+.cross-horizontal {
+  width: 60px;
+  height: 4px;
+  top: -2px;
+  left: -30px;
+}
+
+/* Experience Section Styles */
+.experience-section {
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.experience-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.experience-header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.experience-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.experience-title {
+  font-size: clamp(48px, 6vw, 96px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.experience-item {
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+  border-top: 1px solid #333;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.experience-item:last-child {
+  border-bottom: 1px solid #333;
+}
+
+.experience-item:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  transform: translateX(20px);
+}
+
+.experience-item:hover .experience-arrow {
+  transform: translateX(20px);
+  opacity: 1;
+}
+
+.experience-number {
+  font-size: 18px;
+  font-weight: 300;
+  color: #666;
+  min-width: 80px;
+  font-family: 'Courier New', monospace;
+}
+
+.experience-content {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.experience-item-title {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.experience-description {
+  font-size: 16px;
+  color: #999;
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+}
+
+.experience-year {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.experience-arrow {
+  font-size: 24px;
+  color: #666;
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.modal-content {
+  background: #111;
+  border-radius: 16px;
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  padding: 40px;
+  transform: scale(0.8) translateY(50px);
+  animation: modalSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 10px 0;
+}
+
+.modal-year {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+.modal-image-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.modal-nav:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.modal-nav.prev {
+  left: 20px;
+}
+
+.modal-nav.next {
+  right: 20px;
+}
+
+.modal-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.modal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-dot.active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
+.modal-dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.1);
+}
+
+.modal-counter {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRotate {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) rotate(-180deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes modalSlideIn {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-title {
+    font-size: clamp(28px, 4vw, 48px);
+  }
+  
+  .compass-icon {
+    left: -40px;
+  }
+  
+  .compass-star {
+    font-size: 24px;
+  }
+  
+  .image-grid {
+    height: 400px;
+  }
+
+  .experience-section {
+    padding: 80px 20px;
+  }
+
+  .experience-header {
+    margin-bottom: 80px;
+  }
+
+  .experience-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .experience-item:hover {
+    transform: translateY(-10px);
+  }
+
+  .experience-number {
+    margin-bottom: 20px;
+    min-width: auto;
+  }
+
+  .experience-content {
+    padding: 0 20px 20px;
+  }
+
+  .modal-content {
+    padding: 30px 20px;
+  }
+
+  .modal-nav {
+    font-size: 24px;
+    padding: 10px 15px;
+  }
+
+  .modal-nav.prev {
+    left: 10px;
+  }
+
+  .modal-nav.next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 15px;
+  }
+  
+  .about-header {
+    margin-bottom: 60px;
+  }
+  
+  .about-title {
+    font-size: clamp(24px, 6vw, 36px);
+    max-width: 100%;
+  }
+  
+  .compass-icon {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .image-grid {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+  
+  .image-container {
+    height: 300px;
+  }
+  
+  .center-cross {
+    display: none;
+  }
+
+  .experience-section {
+    padding: 60px 15px;
+  }
+
+  .experience-header {
+    margin-bottom: 60px;
+  }
+
+  .experience-item {
+    padding: 25px 0;
+  }
+
+  .experience-content {
+    padding: 0 15px 15px;
+  }
+
+  .experience-item-title {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+
+  .modal-content {
+    padding: 20px 15px;
+    margin: 10px;
+  }
+
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .modal-image {
+    max-height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 40px 15px;
+  }
+  
+  .kpr-text {
+    font-size: 14px;
+  }
+  
+  .about-title {
+    font-size: clamp(20px, 7vw, 28px);
+  }
+  
+  .image-container {
+    height: 250px;
+  }
+
+  .experience-section {
+    padding: 40px 15px;
+  }
+
+  .experience-header {
+    margin-bottom: 40px;
+  }
+
+  .experience-item {
+    padding: 20px 0;
+  }
+
+  .experience-content {
+    padding: 0 10px 10px;
+  }
+
+  .modal-nav {
+    display: none;
+  }
+
+  .modal-image {
+    max-height: 40vh;
+  }
+}
+
+/* Enhanced hover effects for desktop */
+@media (hover: hover) {
+  .image-container {
+    cursor: pointer;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.3s ease;
+  }
+  
+  .image-container:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 5;
+  }
+  
+  .image-grid.visible .image-container:hover {
+    transform: scale(1.02);
+  }
+
+  .experience-item:hover .experience-item-title {
+    color: #ccc;
+  }
+}

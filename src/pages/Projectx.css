@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.project-container {
+  min-height: 90vh;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  position: relative;
+  width: 100%;
+}
+
+.content-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 100px 40px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-text h1 {
+  font-size: 4rem;
+  color: white;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .main-text h1 {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-text h1 {
+    font-size: 6rem;
+  }
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+  position: relative;
+  padding-right: 70%;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  padding: 16px 32px;
+  border: 1px solid #333;
+  border-radius: 50px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.contact-btn:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+.get-in-touch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .get-in-touch {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.touch-circle {
+  width: 180px;
+  height: 180px;
+  background-color: #4f46e5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.touch-circle:hover {
+  background-color: #5b52f0;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .touch-circle:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+}
+
+.touch-circle span {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (min-width: 768px) {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(-60%);
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.footer-left {
+  display: flex;
+  gap: 60px;
+}
+
+.version,
+.time {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 10%;
+}
+
+.label {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.value {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.socials-label {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.social-links {
+  display: flex;
+  gap: 25px;
+  padding-bottom: 10%;
+}
+
+.social-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #4f46e5;
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover span {
+  background-color: #4f46e5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 40px 20px;
+  }
+  
+  .profile-section {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .contact-section {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  
+  .get-in-touch {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+  }
+  
+  .touch-circle {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .contact-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .contact-btn {
+    text-align: center;
+  }
+  
+  .footer {
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  
+  .footer-left {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footer-right {
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .social-links {
+    flex-wrap: wrap;
+  }
+  
+  .hamburger-menu {
+    top: 30px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .touch-circle {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .touch-circle span {
+    font-size: 14px;
+  }
+}

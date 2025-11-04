@@ -1,0 +1,465 @@
+/* ===========================
+   AIRGUARD - Professional Animated Demo
+   =========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #00E4FF;
+  --danger: #FF4444;
+  --warning: #FFB800;
+  --good: #00E400;
+  --text-light: #f8f9fa;
+  --bg-dark: #0b0c10;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-glow: rgba(255, 255, 255, 0.1);
+  --transition: all 0.4s ease;
+  --blur: blur(10px);
+  --font-main: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background: radial-gradient(circle at 30% 30%, #0a0a0f, #000);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+/* ===================
+   LOADING + ANIMATION
+   =================== */
+
+.airguard-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+}
+
+.airguard-container.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================
+   BACKGROUND PARTICLES
+   =================== */
+
+.background-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: float 10s infinite ease-in-out;
+  opacity: 0.2;
+}
+
+.particle-0 { animation-delay: 0s; left: 10%; }
+.particle-1 { animation-delay: 2s; left: 50%; }
+.particle-2 { animation-delay: 4s; left: 80%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(-60px); opacity: 1; }
+}
+
+/* ===================
+   HEADER / LOGO
+   =================== */
+
+.fabric-header {
+  padding: 80px 0 30px;
+  text-align: center;
+}
+
+.fabric-logo {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-light);
+  position: relative;
+}
+
+.logo-text {
+  background: linear-gradient(90deg, #00E4FF, #8F3F97);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-underline {
+  width: 90px;
+  height: 4px;
+  margin: 8px auto;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #00E4FF, #8F3F97);
+  animation: glowLine 2s infinite alternate;
+}
+
+@keyframes glowLine {
+  from { box-shadow: 0 0 10px var(--primary); }
+  to { box-shadow: 0 0 20px var(--danger); }
+}
+
+/* ===================
+   SECTION TITLES
+   =================== */
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.title-line {
+  display: block;
+  background: linear-gradient(90deg, #00E4FF, #FF4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-description {
+  color: #ccc;
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+/* ===================
+   STATS
+   =================== */
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-glow);
+  border-radius: 16px;
+  backdrop-filter: var(--blur);
+  width: 180px;
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 228, 255, 0.2);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* ===================
+   DEVICE SECTION
+   =================== */
+
+.device-section {
+  margin-top: 60px;
+  position: relative;
+}
+
+.devices-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: flex-end;
+}
+
+/* Laptop */
+.laptop-container {
+  width: 400px;
+  background: #111;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 228, 255, 0.1);
+  overflow: hidden;
+  transform: scale(1);
+  transition: var(--transition);
+}
+
+.laptop-container:hover {
+  transform: scale(1.02);
+}
+
+.laptop-screen {
+  position: relative;
+  background: radial-gradient(circle at top, #0d1117, #000);
+  height: 250px;
+  border-bottom: 2px solid var(--border-glow);
+  overflow: hidden;
+}
+
+.screen-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 228, 255, 0.05), transparent);
+  pointer-events: none;
+}
+
+/* AQI Meter */
+.aqi-display {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meter-svg {
+  width: 200px;
+  transform: rotate(0deg); 
+  height: 120px;
+  padding-top: 10%;
+}
+
+.aqi-value-text {
+  fill: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.aqi-label-text {
+  fill: #aaa;
+  
+  font-size: 10px;
+}
+
+.aqi-status {
+  margin-top: 10px;
+  text-align: center;
+  
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* Pulse alert */
+.pulse-alert {
+  animation: pulseGlow 1s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from { box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); }
+  to { box-shadow: 0 0 25px rgba(255, 0, 0, 0.6); }
+}
+
+/* Sensors */
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.sensor-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+/* Phone */
+.phone-container {
+  width: 230px;
+  border-radius: 32px;
+  background: #111;
+  padding: 10px;
+  position: relative;
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 0 25px rgba(0, 228, 255, 0.1);
+}
+
+.phone-frame.vibrate {
+  animation: vibrate 0.4s ease-in-out infinite;
+}
+
+@keyframes vibrate {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, 2px); }
+}
+
+/* Phone screen */
+.phone-screen {
+  background: #000;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 430px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  text-align: center;
+  padding: 10px;
+  background: rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border-glow);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.notification-badge {
+  background: var(--danger);
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.notification-badge.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* SMS Messages */
+.sms-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.sms-message {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--primary);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+}
+
+.precaution-text {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.action-btn {
+  background: var(--primary);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  margin-right: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.action-btn.secondary {
+  background: #333;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Connection line */
+.connection-line {
+  width: 60%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 60px auto;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.data-flow {
+  position: absolute;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  animation: flow 2s linear infinite;
+}
+
+@keyframes flow {
+  from { left: -40%; }
+  to { left: 100%; }
+}
+
+.connection-pulse {
+  width: 12px;
+  height: 12px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: translateX(-50%) scale(0.8); opacity: 0.6; }
+  50% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+  100% { transform: translateX(-50%) scale(0.8); opacity: 0.6; }
+}

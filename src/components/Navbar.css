@@ -1,0 +1,283 @@
+/* Enhanced Liquid Glass Navbar Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.liquid-navbar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 1000;
+  padding: 0 16px;
+}
+
+/* Glow effect */
+.navbar-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, 
+    rgba(168, 85, 247, 0.2), 
+    rgba(236, 72, 153, 0.2), 
+    rgba(59, 130, 246, 0.2));
+  filter: blur(40px);
+  border-radius: 32px;
+  transition: opacity 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+.navbar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 28px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Animated background blob */
+.navbar-blob {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 56px;
+  width: 20%;
+  border-radius: 16px;
+  opacity: 0.1;
+  filter: blur(8px);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #1f2937;
+  border-radius: 20px;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  background: transparent;
+  will-change: transform;
+  font-weight: 600;
+  user-select: none;
+}
+
+/* Icon glow container */
+.nav-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  filter: blur(12px);
+  transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+.nav-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav-item:hover .nav-icon {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* Particle effects */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+.particle-1 {
+  top: -4px;
+  right: -4px;
+  animation-duration: 1s;
+}
+
+.particle-2 {
+  bottom: -4px;
+  left: -4px;
+  animation-duration: 1.2s;
+  animation-delay: 0.2s;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.nav-label {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.nav-label.hidden {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-8px) scale(0.9);
+}
+
+.nav-label.visible {
+  opacity: 1;
+  max-height: 24px;
+  transform: translateY(0) scale(1);
+}
+
+/* Bottom indicator */
+.nav-indicator {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  border-radius: 2px;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Floating particles container */
+.floating-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.float-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: float ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.5);
+    opacity: 0.6;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .liquid-navbar {
+    padding: 0 12px;
+    bottom: 16px;
+  }
+
+  .navbar-container {
+    gap: 8px;
+    padding: 12px 20px;
+  }
+
+  .nav-item {
+    padding: 10px 12px;
+  }
+
+  .nav-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-label {
+    font-size: 12px;
+  }
+
+  .navbar-blob {
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 10px 16px;
+    gap: 6px;
+  }
+
+  .nav-item {
+    padding: 8px 10px;
+  }
+
+  .nav-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-label {
+    font-size: 11px;
+  }
+
+  .navbar-blob {
+    height: 44px;
+  }
+}
+
+/* Performance optimizations */
+.nav-item,
+.nav-icon,
+.nav-label,
+.navbar-blob,
+.navbar-glow {
+  will-change: transform, opacity;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .navbar-container {
+    background: rgba(30, 30, 30, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      0 2px 8px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-item {
+    color: #f3f4f6;
+  }
+}

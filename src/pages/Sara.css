@@ -1,0 +1,1861 @@
+.sara-container {
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Portfolio View Styles */
+.portfolio-view {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.portfolio-content {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+}
+
+.brand-title h1 {
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #000;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.portfolio-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+  padding-bottom: 10%;
+}
+
+.detail-section h3 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #999;
+  letter-spacing: 0.1em;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+}
+
+.detail-section p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Home View Styles */
+.home-view {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.laptop-mockup {
+  width: 1000px;
+  max-width: 95vw;
+  aspect-ratio: 16/10;
+  background: linear-gradient(145deg, #2a2a3a, #1f1f2f);
+  border-radius: 25px 25px 12px 12px;
+  padding: 25px 25px 50px 25px;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  transform: perspective(1000px) rotateX(5deg);
+  transition: transform 0.3s ease;
+}
+
+.laptop-mockup:hover {
+  transform: perspective(1000px) rotateX(2deg) scale(1.02);
+}
+
+.laptop-mockup::after {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 15px;
+  background: linear-gradient(to right, transparent, #333, transparent);
+  border-radius: 0 0 15px 15px;
+}
+
+.laptop-screen {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #0a0a0f 0%, #050508 100%);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
+}
+
+.laptop-screen.screen-glow {
+  height: 100%;
+  width: 100%;
+  box-shadow: 
+    0 0 30px rgba(79, 70, 229, 0.3),
+    0 0 60px rgba(99, 102, 241, 0.2),
+    inset 0 0 30px rgba(79, 70, 229, 0.1);
+}
+
+/* Mood-based screen effects */
+.laptop-screen.mood-happy { box-shadow: 0 0 40px rgba(255, 193, 7, 0.3); }
+.laptop-screen.mood-productive { box-shadow: 0 0 40px rgba(76, 175, 80, 0.3); }
+.laptop-screen.mood-relaxed { box-shadow: 0 0 40px rgba(63, 81, 181, 0.3); }
+.laptop-screen.mood-excited { box-shadow: 0 0 40px rgba(233, 30, 99, 0.3); }
+.laptop-screen.mood-achievement { box-shadow: 0 0 40px rgba(255, 152, 0, 0.3); }
+.laptop-screen.mood-helpful { box-shadow: 0 0 40px rgba(156, 39, 176, 0.3); }
+
+/* Interactive Cursor Follower */
+.cursor-follower {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.8), transparent);
+  pointer-events: none;
+  z-index: 100;
+  transition: all 0.1s ease;
+  animation: cursorPulse 2s infinite;
+}
+
+/* Holographic Grid Background */
+.holographic-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.grid-lines.horizontal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 49px,
+    rgba(79, 70, 229, 0.1) 50px
+  );
+}
+
+.grid-lines.vertical {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 49px,
+    rgba(79, 70, 229, 0.1) 50px
+  );
+}
+
+/* Neural Network Background */
+.neural-network {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.neural-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+}
+
+.node-core {
+  width: 100%;
+  height: 100%;
+  background: rgba(79, 70, 229, 0.6);
+  border-radius: 50%;
+  animation: neuralPulse 3s infinite ease-in-out;
+}
+
+.neural-connection {
+  position: absolute;
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(79, 70, 229, 0.3), transparent);
+  transform-origin: bottom;
+}
+
+/* Position neural nodes - Updated for full screen distribution */
+.node-1 { top: 5%; left: 8%; animation-delay: 0s; }
+.node-2 { top: 12%; left: 35%; animation-delay: 0.3s; }
+.node-3 { top: 8%; left: 72%; animation-delay: 0.6s; }
+.node-4 { top: 28%; left: 15%; animation-delay: 0.9s; }
+.node-5 { top: 25%; left: 55%; animation-delay: 1.2s; }
+.node-6 { top: 45%; left: 5%; animation-delay: 1.5s; }
+.node-7 { top: 50%; left: 42%; animation-delay: 1.8s; }
+.node-8 { top: 38%; left: 85%; animation-delay: 2.1s; }
+.node-9 { top: 68%; left: 22%; animation-delay: 2.4s; }
+.node-10 { top: 72%; left: 68%; animation-delay: 2.7s; }
+.node-11 { top: 88%; left: 12%; animation-delay: 3s; }
+.node-12 { top: 85%; left: 78%; animation-delay: 3.3s; }
+
+/* Chat Interface - Updated for full screen layout */
+.chat-interface {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10;
+  padding: 2% 3%; /* Add padding for better spacing */
+}
+
+/* Advanced AI Avatar - Repositioned for full screen */
+.ai-avatar {
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  z-index: 20;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ai-outer-ring, .ai-middle-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(79, 70, 229, 0.3);
+}
+
+.ai-outer-ring {
+  width: 180px;
+  height: 180px;
+  top: -40px;
+  left: -40px;
+  animation: rotateClockwise 20s linear infinite;
+}
+
+.ai-middle-ring {
+  width: 140px;
+  height: 140px;
+  top: -20px;
+  left: -20px;
+  animation: rotateCounterClockwise 15s linear infinite;
+}
+
+.ai-core {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #4f46e5 0%, #7c3aed 50%, #1e1b4b 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: aiFloat 4s ease-in-out infinite;
+  box-shadow: 
+    0 0 30px rgba(79, 70, 229, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.ai-face-container {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+.ai-eyes-advanced {
+  display: flex;
+  justify-content: space-between;
+  width: 40px;
+  margin: 0 auto 15px;
+  padding-top: 15px;
+}
+
+.ai-eye-advanced {
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  animation: aiEyeBlink 5s infinite;
+}
+
+.pupil {
+  width: 8px;
+  height: 8px;
+  background: #1f2937;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: all 0.3s ease;
+}
+
+.iris {
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #4f46e5, #1e40af);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.ai-eye-advanced.thinking .pupil {
+  animation: eyeRoll 2s infinite;
+}
+
+.ai-mouth-advanced {
+  width: 20px;
+  height: 12px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.mouth-line {
+  width: 100%;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.ai-mouth-advanced.talking .mouth-line {
+  animation: aiTalk 0.3s infinite alternate;
+}
+
+/* Advanced Thinking Animation */
+.advanced-thinking {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+}
+
+.thinking-orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.orbit-1 { width: 35px; height: 35px; top: 27px; left: 27px; animation: orbitSpin 2s linear infinite; }
+.orbit-2 { width: 55px; height: 55px; top: 17px; left: 17px; animation: orbitSpin 3s linear infinite reverse; }
+.orbit-3 { width: 75px; height: 75px; top: 7px; left: 7px; animation: orbitSpin 4s linear infinite; }
+
+.thinking-particle {
+  width: 6px;
+  height: 6px;
+  background: #4f46e5;
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Energy Field */
+.energy-field {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
+}
+
+.energy-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: 50%;
+  animation: energyPulse 3s infinite ease-out;
+}
+
+.wave-1 { animation-delay: 0s; }
+.wave-2 { animation-delay: 0.5s; }
+.wave-3 { animation-delay: 1s; }
+.wave-4 { animation-delay: 1.5s; }
+.wave-5 { animation-delay: 2s; }
+.wave-6 { animation-delay: 2.5s; }
+
+/* Phase-based AI transformations */
+.ai-avatar.phase-userTyping .ai-core { 
+  background: radial-gradient(circle, #10b981 0%, #059669 50%, #064e3b 100%);
+}
+.ai-avatar.phase-aiThinking .ai-core { 
+  background: radial-gradient(circle, #f59e0b 0%, #d97706 50%, #92400e 100%);
+}
+.ai-avatar.phase-aiResponding .ai-core { 
+  background: radial-gradient(circle, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+}
+
+/* Advanced Character Avatar - Repositioned for full screen */
+.character-avatar-advanced {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  z-index: 20;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.character-glow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.3), transparent);
+  border-radius: 50%;
+  animation: characterGlow 3s ease-in-out infinite;
+}
+
+.character-body {
+  width: 100px;
+  height: 130px;
+  position: relative;
+}
+
+.character-head {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #fbbf24 0%, #f59e0b 70%);
+  border-radius: 50%;
+  position: relative;
+  animation: characterBounce 3s ease-in-out infinite;
+  box-shadow: 
+    0 10px 30px rgba(251, 191, 36, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.character-hair-advanced {
+  position: absolute;
+  top: -25px;
+  left: 20px;
+  width: 60px;
+  height: 40px;
+  background: linear-gradient(135deg, #92400e, #451a03);
+  border-radius: 30px 30px 0 0;
+  overflow: hidden;
+}
+
+.character-hair-advanced::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  width: 40px;
+  height: 15px;
+  background: linear-gradient(45deg, #b45309, #92400e);
+  border-radius: 50%;
+}
+
+.character-face-advanced {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-eyes-advanced {
+  display: flex;
+  justify-content: space-between;
+  width: 35px;
+  margin-bottom: 15px;
+}
+
+.character-eye-advanced {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+  animation: characterBlink 4s infinite;
+}
+
+.character-eye-advanced::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  background: #1f2937;
+  border-radius: 50%;
+}
+
+.eye-shine {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+}
+
+.character-eye-advanced.focused::after {
+  animation: eyeFocus 0.5s ease-in-out infinite alternate;
+}
+
+.character-mouth-advanced {
+  width: 18px;
+  height: 10px;
+  background: #dc2626;
+  border-radius: 0 0 18px 18px;
+  transition: all 0.3s ease;
+}
+
+.character-mouth-advanced.talking {
+  animation: characterTalk 0.4s ease-in-out infinite alternate;
+}
+
+.character-shoulders {
+  width: 80px;
+  height: 45px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 40px 40px 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 15px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.typing-bubble {
+  width: 30px;
+  height: 10px;
+  background: linear-gradient(45deg, #4f46e5, #7c3aed);
+  border-radius: 5px;
+  animation: typingBubble 1s ease-in-out infinite;
+}
+
+/* Advanced Chat Messages - Repositioned for better full screen usage */
+.chat-messages-advanced {
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88%;
+  max-width: 700px;
+  z-index: 25;
+}
+
+.message-container-advanced {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  margin-bottom: 20px;
+  animation: messageSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.message-container-advanced.user-message {
+  flex-direction: row-reverse;
+}
+
+.message-avatar {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+  animation: avatarPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.user-message .message-avatar {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+}
+
+.message-bubble-advanced {
+  max-width: 75%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 25px 25px 5px 25px;
+  padding: 20px 26px;
+  position: relative;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  animation: bubbleFloat 3s ease-in-out infinite;
+}
+
+.user-message .message-bubble-advanced {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.95), rgba(124, 58, 237, 0.95));
+  border-radius: 25px 25px 25px 5px;
+  color: white;
+}
+
+.message-content {
+  position: relative;
+  z-index: 2;
+}
+
+.message-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+  font-weight: 500;
+}
+
+.user-message .message-text {
+  color: white;
+}
+
+.typing-cursor-advanced {
+  display: inline-block;
+  color: #4f46e5;
+  font-weight: bold;
+  opacity: 0;
+  animation: none;
+  font-size: 18px;
+}
+
+.user-message .typing-cursor-advanced {
+  color: white;
+}
+
+.typing-cursor-advanced.active {
+  animation: cursorBlink 1.2s infinite;
+}
+
+.message-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.decoration-1, .decoration-2 {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(79, 70, 229, 0.3);
+  border-radius: 50%;
+}
+
+.decoration-1 {
+  top: 10px;
+  right: 10px;
+  animation: decorationFloat1 4s ease-in-out infinite;
+}
+
+.decoration-2 {
+  bottom: 10px;
+  left: 10px;
+  animation: decorationFloat2 3s ease-in-out infinite;
+}
+
+/* Advanced Voice Waves - Repositioned for full screen */
+.advanced-voice-waves {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: end;
+  gap: 5px;
+  z-index: 15;
+}
+
+.voice-wave-advanced {
+  width: 6px;
+  background: linear-gradient(to top, #4f46e5, #7c3aed);
+  border-radius: 3px;
+  animation: voiceWave 0.8s ease-in-out infinite alternate;
+}
+
+.wave-1 { height: 25px; animation-delay: 0s; }
+.wave-2 { height: 40px; animation-delay: 0.1s; }
+.wave-3 { height: 55px; animation-delay: 0.2s; }
+.wave-4 { height: 70px; animation-delay: 0.3s; }
+.wave-5 { height: 55px; animation-delay: 0.4s; }
+.wave-6 { height: 40px; animation-delay: 0.5s; }
+.wave-7 { height: 30px; animation-delay: 0.6s; }
+.wave-8 { height: 20px; animation-delay: 0.7s; }
+
+/* Particle System */
+.particle-system {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.advanced-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, #4f46e5, transparent);
+  border-radius: 50%;
+  animation: particleFlow 8s infinite linear;
+}
+
+.advanced-particle:nth-child(odd) {
+  background: radial-gradient(circle, #7c3aed, transparent);
+}
+
+.advanced-particle:nth-child(3n) {
+  background: radial-gradient(circle, #f59e0b, transparent);
+}
+
+/* Status Indicator - Repositioned for full screen */
+.status-indicator {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 14px 22px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 30;
+  transition: all 0.3s ease;
+}
+
+.status-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: statusPulse 2s infinite;
+}
+
+.status-indicator.phase-userTyping .status-icon {
+  background: #f59e0b;
+}
+
+.status-indicator.phase-aiThinking .status-icon {
+  background: #ef4444;
+  animation: statusThinking 1s infinite;
+}
+
+.status-indicator.phase-aiResponding .status-icon {
+  background: #8b5cf6;
+}
+
+.status-text {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Data Flow Animation - Updated positions for full screen */
+.data-flow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+.data-stream {
+  position: absolute;
+  width: 2px;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, #4f46e5, transparent);
+  animation: dataFlow 3s infinite linear;
+}
+
+.stream-1 { left: 15%; animation-delay: 0s; }
+.stream-2 { left: 35%; animation-delay: 0.6s; }
+.stream-3 { left: 55%; animation-delay: 1.2s; }
+.stream-4 { left: 75%; animation-delay: 1.8s; }
+.stream-5 { left: 25%; animation-delay: 2.4s; }
+
+/* Animations */
+@keyframes cursorPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes neuralPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+@keyframes rotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes aiFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-8px) scale(1.05); }
+  75% { transform: translateY(8px) scale(0.95); }
+}
+
+@keyframes aiEyeBlink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes eyeRoll {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes aiTalk {
+  0% { transform: scaleY(1) scaleX(1); }
+  100% { transform: scaleY(0.7) scaleX(1.3); }
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes energyPulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes characterGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes characterBounce {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(2deg); }
+  75% { transform: translateY(5px) rotate(-2deg); }
+}
+
+@keyframes characterBlink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  96% { transform: scaleY(0.1); }
+}
+
+@keyframes eyeFocus {
+  0% { transform: scale(1); }
+  100% { transform: scale(0.8); }
+}
+
+@keyframes characterTalk {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(0.6) scaleX(1.2); }
+}
+
+@keyframes typingBubble {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes messageSlideIn {
+  0% { transform: translateX(-50%) translateY(30px); opacity: 0; }
+  100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+.user-message {
+  animation: messageSlideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes messageSlideInRight {
+  0% { transform: translateX(50%) translateY(30px); opacity: 0; }
+  100% { transform: translateX(0) translateY(0); opacity: 1; }
+}
+
+@keyframes avatarPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes bubbleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes cursorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes decorationFloat1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+  50% { transform: translateY(-5px) rotate(180deg); opacity: 1; }
+}
+
+@keyframes decorationFloat2 {
+  0%, 100% { transform: translateY(0) rotate(360deg); opacity: 0.5; }
+  50% { transform: translateY(5px) rotate(180deg); opacity: 1; }
+}
+
+@keyframes voiceWave {
+  0% { height: 10px; opacity: 0.3; }
+  100% { height: var(--wave-height, 30px); opacity: 1; }
+}
+
+@keyframes particleFlow {
+  0% { transform: translateY(110vh) translateX(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-10vh) translateX(50px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+@keyframes statusThinking {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes dataFlow {
+  0% { transform: translateY(-110vh); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .laptop-mockup {
+    width: 900px;
+  }
+  
+  .ai-avatar, .character-avatar-advanced {
+    top: 6%;
+  }
+  
+  .ai-avatar {
+    left: 6%;
+  }
+  
+  .character-avatar-advanced {
+    right: 6%;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-details {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .laptop-mockup {
+    width: 100%;
+    transform: none;
+  }
+  
+  .laptop-mockup:hover {
+    transform: none;
+  }
+  
+  .ai-avatar, .character-avatar-advanced {
+    top: 5%;
+  }
+  
+  .ai-avatar {
+    left: 5%;
+  }
+  
+  .character-avatar-advanced {
+    right: 5%;
+  }
+  
+  .ai-core {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .ai-outer-ring {
+    width: 140px;
+    height: 140px;
+    top: -30px;
+    left: -30px;
+  }
+  
+  .ai-middle-ring {
+    width: 110px;
+    height: 110px;
+    top: -15px;
+    left: -15px;
+  }
+  
+  .character-head {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .character-body {
+    width: 80px;
+    height: 110px;
+  }
+  
+  .character-shoulders {
+    width: 65px;
+    height: 35px;
+    left: 7px;
+  }
+  
+  .message-text {
+    font-size: 14px;
+  }
+  
+  .chat-messages-advanced {
+    width: 92%;
+    bottom: 15%;
+  }
+  
+  .message-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .message-bubble-advanced {
+    padding: 16px 20px;
+    max-width: 78%;
+  }
+  
+  .status-text {
+    font-size: 13px;
+  }
+  
+  .status-indicator {
+    padding: 12px 18px;
+  }
+  
+  .voice-wave-advanced {
+    width: 5px;
+  }
+  
+  .wave-1 { height: 20px; }
+  .wave-2 { height: 32px; }
+  .wave-3 { height: 45px; }
+  .wave-4 { height: 58px; }
+  .wave-5 { height: 45px; }
+  .wave-6 { height: 32px; }
+  .wave-7 { height: 25px; }
+  .wave-8 { height: 18px; }
+}
+
+@media (max-width: 480px) {
+  .home-view {
+    padding: 1rem;
+  }
+  
+  .chat-interface {
+    padding: 1% 2%;
+  }
+  
+  .ai-avatar, .character-avatar-advanced {
+    top: 3%;
+  }
+  
+  .ai-avatar {
+    left: 3%;
+  }
+  
+  .character-avatar-advanced {
+    right: 3%;
+  }
+  
+  .ai-core {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .ai-outer-ring {
+    width: 120px;
+    height: 120px;
+    top: -25px;
+    left: -25px;
+  }
+  
+  .ai-middle-ring {
+    width: 95px;
+    height: 95px;
+    top: -12px;
+    left: -12px;
+  }
+  
+  .character-head {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .character-body {
+    width: 70px;
+    height: 95px;
+  }
+  
+  .character-shoulders {
+    width: 55px;
+    height: 30px;
+    left: 7px;
+  }
+  
+  .character-hair-advanced {
+    top: -20px;
+    left: 15px;
+    width: 40px;
+    height: 30px;
+  }
+  
+  .message-text {
+    font-size: 13px;
+  }
+  
+  .message-bubble-advanced {
+    padding: 14px 18px;
+    max-width: 80%;
+  }
+  
+  .message-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .chat-messages-advanced {
+    width: 94%;
+    bottom: 12%;
+  }
+  
+  .status-indicator {
+    padding: 10px 15px;
+    top: 2%;
+  }
+  
+  .status-text {
+    font-size: 12px;
+  }
+  
+  .status-icon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .voice-wave-advanced {
+    width: 4px;
+    gap: 3px;
+  }
+  
+  .advanced-voice-waves {
+    bottom: 8%;
+  }
+  
+  .wave-1 { height: 18px; }
+  .wave-2 { height: 28px; }
+  .wave-3 { height: 38px; }
+  .wave-4 { height: 48px; }
+  .wave-5 { height: 38px; }
+  .wave-6 { height: 28px; }
+  .wave-7 { height: 22px; }
+  .wave-8 { height: 15px; }
+  
+  .advanced-thinking {
+    top: -40px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .orbit-1 { width: 25px; height: 25px; top: 22px; left: 22px; }
+  .orbit-2 { width: 40px; height: 40px; top: 15px; left: 15px; }
+  .orbit-3 { width: 55px; height: 55px; top: 7px; left: 7px; }
+}
+
+h1 {
+    color: #000;
+    font-size: 20px;
+    padding-bottom: 10%;
+}
+/* ======= ANDROID LAPTOP SCREEN ALIGNMENT FIXES ======= */
+
+/* Android Mobile Specific Fixes */
+@media screen and (max-width: 768px) {
+  .home-view {
+    padding: 1rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+  
+  .laptop-mockup {
+    width: 100%;
+    max-width: 100vw;
+    aspect-ratio: 16/10;
+    transform: none;
+    margin: 0;
+    padding: 15px 15px 30px 15px;
+  }
+  
+  .laptop-mockup:hover {
+    transform: none;
+  }
+  
+  .laptop-screen {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+  }
+  
+  .chat-interface {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Avatar positioning for mobile */
+  .ai-avatar {
+    position: absolute;
+    top: 8%;
+    left: 8%;
+    transform: scale(0.8);
+  }
+  
+  .character-avatar-advanced {
+    position: absolute;
+    top: 8%;
+    right: 8%;
+    transform: scale(0.8);
+  }
+  
+  /* Status indicator mobile positioning */
+  .status-indicator {
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  
+  /* Chat messages mobile positioning */
+  .chat-messages-advanced {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: none;
+  }
+  
+  /* Voice waves mobile positioning */
+  .advanced-voice-waves {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Small Android screens (360px and below) */
+@media screen and (max-width: 480px) {
+  .laptop-mockup {
+    padding: 12px 12px 25px 12px;
+  }
+  
+  .chat-interface {
+    padding: 2%;
+  }
+  
+  .ai-avatar {
+    top: 6%;
+    left: 6%;
+    transform: scale(0.7);
+  }
+  
+  .character-avatar-advanced {
+    top: 6%;
+    right: 6%;
+    transform: scale(0.7);
+  }
+  
+  .status-indicator {
+    top: 4%;
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+  
+  .chat-messages-advanced {
+    bottom: 18%;
+    width: 88%;
+  }
+  
+  .message-bubble-advanced {
+    max-width: 85%;
+    padding: 12px 16px;
+  }
+  
+  .advanced-voice-waves {
+    bottom: 10%;
+  }
+}
+
+/* Very small Android screens (320px) */
+@media screen and (max-width: 360px) {
+  .laptop-mockup {
+    padding: 10px 10px 20px 10px;
+  }
+  
+  .ai-avatar {
+    top: 5%;
+    left: 5%;
+    transform: scale(0.6);
+  }
+  
+  .character-avatar-advanced {
+    top: 5%;
+    right: 5%;
+    transform: scale(0.6);
+  }
+  
+  .status-indicator {
+    top: 3%;
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+  
+  .chat-messages-advanced {
+    bottom: 16%;
+    width: 90%;
+  }
+  
+  .message-bubble-advanced {
+    max-width: 88%;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+  
+  .advanced-voice-waves {
+    bottom: 8%;
+    transform: translateX(-50%) scale(0.8);
+  }
+}
+
+/* Android landscape mode fixes */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .home-view {
+    padding: 0.5rem;
+  }
+  
+  .laptop-mockup {
+    padding: 8px 8px 15px 8px;
+  }
+  
+  .ai-avatar {
+    top: 8%;
+    left: 8%;
+    transform: scale(0.6);
+  }
+  
+  .character-avatar-advanced {
+    top: 8%;
+    right: 8%;
+    transform: scale(0.6);
+  }
+  
+  .status-indicator {
+    top: 5%;
+    font-size: 10px;
+  }
+  
+  .chat-messages-advanced {
+    bottom: 25%;
+    width: 80%;
+  }
+  
+  .advanced-voice-waves {
+    bottom: 15%;
+  }
+}
+
+/* Fix for Android Chrome address bar */
+@media screen and (max-height: 600px) {
+  .home-view {
+    min-height: 100vh;
+    min-height: calc(100vh - 56px); /* Chrome address bar height */
+  }
+}
+
+/* Ensure proper stacking context on Android */
+.laptop-screen > * {
+  position: relative;
+  z-index: auto;
+}
+
+.holographic-grid,
+.neural-network,
+.particle-system,
+.data-flow {
+  z-index: 1;
+}
+
+.chat-interface {
+  z-index: 10;
+}
+
+.ai-avatar,
+.character-avatar-advanced {
+  z-index: 20;
+}
+
+.status-indicator {
+  z-index: 30;
+}
+/* ======= LAPTOP SCREEN PERFECT ALIGNMENT FIXES ======= */
+
+/* Ensure laptop screen has proper positioning context */
+.laptop-screen {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fix chat interface positioning */
+.chat-interface {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 94%;
+  height: 94%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center avatars properly */
+.ai-avatar {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate(0, 0);
+}
+
+.character-avatar-advanced {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  transform: translate(0, 0);
+}
+
+/* Center status indicator */
+.status-indicator {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Center chat messages */
+.chat-messages-advanced {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Center voice waves */
+.advanced-voice-waves {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Mobile alignment fixes */
+@media (max-width: 768px) {
+  .chat-interface {
+    width: 96%;
+    height: 96%;
+  }
+  
+  .ai-avatar {
+    top: 8%;
+    left: 8%;
+  }
+  
+  .character-avatar-advanced {
+    top: 8%;
+    right: 8%;
+  }
+  
+  .status-indicator {
+    top: 6%;
+  }
+  
+  .chat-messages-advanced {
+    width: 85%;
+    top: 52%;
+  }
+  
+  .advanced-voice-waves {
+    bottom: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-interface {
+    width: 98%;
+    height: 98%;
+  }
+  
+  .ai-avatar {
+    top: 6%;
+    left: 6%;
+  }
+  
+  .character-avatar-advanced {
+    top: 6%;
+    right: 6%;
+  }
+  
+  .status-indicator {
+    top: 4%;
+  }
+  
+  .chat-messages-advanced {
+    width: 88%;
+    top: 50%;
+  }
+  
+  .advanced-voice-waves {
+    bottom: 8%;
+  }
+}
+/* ======= FULL SCREEN LAPTOP LAYOUT ======= */
+
+/* Make chat interface fill entire screen */
+.chat-interface {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spread avatars to corners */
+.ai-avatar {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transform: none;
+}
+
+.character-avatar-advanced {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  transform: none;
+}
+
+/* Status indicator at top center */
+.status-indicator {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Chat messages in center, larger area */
+.chat-messages-advanced {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  max-width: 750px;
+  margin-top: 2%;
+}
+
+/* Voice waves at bottom center */
+.advanced-voice-waves {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Increase avatar sizes for full screen */
+.ai-core {
+  width: 110px;
+  height: 110px;
+}
+
+.ai-outer-ring {
+  width: 200px;
+  height: 200px;
+  top: -45px;
+  left: -45px;
+}
+
+.ai-middle-ring {
+  width: 155px;
+  height: 155px;
+  top: -22px;
+  left: -22px;
+}
+
+.character-head {
+  width: 110px;
+  height: 110px;
+}
+
+.character-body {
+  width: 110px;
+  height: 145px;
+}
+
+.character-shoulders {
+  width: 90px;
+  height: 50px;
+  left: 10px;
+}
+
+/* Larger message bubbles */
+.message-bubble-advanced {
+  max-width: 70%;
+  padding: 22px 28px;
+}
+
+.message-text {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.message-avatar {
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+}
+
+/* Larger voice waves */
+.voice-wave-advanced {
+  width: 7px;
+}
+
+.wave-1 { height: 30px; }
+.wave-2 { height: 48px; }
+.wave-3 { height: 65px; }
+.wave-4 { height: 82px; }
+.wave-5 { height: 65px; }
+.wave-6 { height: 48px; }
+.wave-7 { height: 35px; }
+.wave-8 { height: 25px; }
+
+/* Larger status indicator */
+.status-indicator {
+  padding: 16px 26px;
+}
+
+.status-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.status-text {
+  font-size: 16px;
+}
+
+/* Mobile full screen adjustments */
+@media (max-width: 768px) {
+  .ai-avatar {
+    top: 6%;
+    left: 6%;
+  }
+  
+  .character-avatar-advanced {
+    top: 6%;
+    right: 6%;
+  }
+  
+  .chat-messages-advanced {
+    width: 88%;
+    margin-top: 0;
+  }
+  
+  .ai-core {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .ai-outer-ring {
+    width: 150px;
+    height: 150px;
+    top: -32px;
+    left: -32px;
+  }
+  
+  .ai-middle-ring {
+    width: 120px;
+    height: 120px;
+    top: -17px;
+    left: -17px;
+  }
+  
+  .character-head {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .character-body {
+    width: 85px;
+    height: 115px;
+  }
+  
+  .message-text {
+    font-size: 15px;
+  }
+  
+  .message-bubble-advanced {
+    padding: 18px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-avatar {
+    top: 4%;
+    left: 4%;
+  }
+  
+  .character-avatar-advanced {
+    top: 4%;
+    right: 4%;
+  }
+  
+  .status-indicator {
+    top: 2%;
+    padding: 12px 20px;
+  }
+  
+  .chat-messages-advanced {
+    width: 90%;
+    top: 50%;
+  }
+  
+  .advanced-voice-waves {
+    bottom: 6%;
+  }
+  
+  .ai-core {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .ai-outer-ring {
+    width: 130px;
+    height: 130px;
+    top: -27px;
+    left: -27px;
+  }
+  
+  .ai-middle-ring {
+    width: 105px;
+    height: 105px;
+    top: -15px;
+    left: -15px;
+  }
+  
+  .character-head {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .character-body {
+    width: 75px;
+    height: 100px;
+  }
+  
+  .character-shoulders {
+    width: 60px;
+    height: 35px;
+  }
+  
+  .message-text {
+    font-size: 14px;
+  }
+  
+  .message-bubble-advanced {
+    padding: 16px 20px;
+    max-width: 75%;
+  }
+}
